@@ -31,7 +31,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1673252821264">
+  <link rel="stylesheet" href="/css/style.css?v=1673253201050">
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -270,7 +270,7 @@
             
                 <p>文件上传漏洞：是指由于程序员在对用户文件上传部分的控制不足或者处理缺陷，而导致的用户可以越过其本身权限向服务器上上传可执行的动态脚本文件。这里上传的文件可以是木马，病毒，恶意脚本或者WebShell等。<br>文件上传后导致的常见的问题是：<br>    1.上传的是恶意脚本<br>    2.上传的是木马，病毒文件<br>    3.上传的是flash的策略文件crossdomain.xml<br>    4.上传的是钓鱼图片或成为包含了脚本的图片，在某些版本的浏览器中会被作为脚本执行<br>    5.上传的是webshell<br>      （补：关于webshell<br>      .WebShell就是以asp、php、jsp或者cgi等网页文件形式存在的一种命令执行环境，也可以将其称之为一种网页后门。攻击者在入侵了一个网站后，<br>                  通常会将这些asp或php后门文件与网站服务器web目录下正常的网页文件混在一起，然后使用浏览器来访问这些后门，得到一个命令执行环境，<br>                  以达到控制网站服务器的目的（可以上传下载或者修改文件，操作数据库，执行任意命令等）。<br>        .文件上传漏洞本身就是一个危害巨大的漏洞，WebShell更是将这种漏洞的利用无限扩大。大多数的上传漏洞被利用后攻击者都会留下WebShell以方便后<br>                  续进入系统。攻击者在受影响系统放置或者插入WebShell后，可通过该WebShell更轻松，更隐蔽的在服务中为所欲为<br>         .WebShell后门隐蔽较性高，可以轻松穿越防火墙，访问WebShell时不会留下系统日志，只会在网站的web日志中留下一些数据提交记录，<br>                  没有经验的管理员不容易发现入侵痕迹。攻击者可以将WebShell隐藏在正常文件中并修改文件时间增强隐蔽性，也可以采用一些函数对WebShell进行编码<br>                  或者拼接以规避检测。除此之外，通过一句话木马的小马来提交功能更强大的大马可以更容易通过应用本身的检测。<?php eval($_POST[a]); ?>就是一个<br>                  最常见最原始的小马。<br>                .这些网页脚本常被称为web脚本木马，<br>      .有一类webshell叫做 大马，连接时也要输入密码，密码一般放在木马文件中<br>         注：一句话木马叫做小马<br>           （小马体积小，容易隐藏，隐蔽性强。大马体积比较大，功能多，危害大。）<br>              ）</p>
 <p>文件上传漏洞发生的前提条件：<br>    1.web服务器要开启文件上传功能，且上传api对外开放<br>    2.web用户对上传目标目录有可执行权限，且对上传的文件可执行<br>    3.可访问到上传的动态文件</p>
-<p>常见的一句话木马<br>          php一句话木马<br>       1.<?php eval($_POST['x']);?><br>       2.<?php assert($_POST['x']);?><br>      asp一句话木马<br>       &lt;%eval request(“caicao”)%&gt;</p>
+<p>常见的一句话木马<br>      php一句话木马<br>       <?php eval($_POST['x']);?><br>       <?php assert($_POST['x']);?><br>      asp一句话木马<br>       &lt;%eval request(“caicao”)%&gt;</p>
 <p>文件上传漏洞的攻击</p>
 <p>补充.关于黑白名单：<br>                                           黑名单 ：1.后缀  2.content-Type 3.文件头  4.文件内容  5.文件的大小等<br>                                           白名单：1.后缀  2.content-Type 3.文件头 4.文件大小内容等（一般情况下绕过有 00截断 解析漏洞  文件包含 条件竞争等等）<br>                       .判断黑白名单(确定是白名单过滤还是黑名单过滤)：<br>                                     用bp抓包后，发到Repeater模块，将文件后缀随便改为一串字母，如果能上传说明是一个黑名单过滤，反之则为白名单过滤<br>                                      （黑名单比较容易绕过，因为如果使用的是黑名单用于筛选过滤，因为黑名单是指定了不能上传的东西，而白名单指定了什么样的才能上传（比如说只允许上传png类型）。因此白名单更安全些<br>                                      电脑或者网络安全里面，我们黑名单的意思就是拒绝的名单。<br>                                       白名单就是值得信任允许访问或者允许通过验证的名单。   （就相当于白名单里的可以通过，黑名单里的不可以通过）<br>                                      中立用户或者中性用户，我们称为普通用户，或者低权限用户。<br>                                                              ）  </p>
 <pre><code>1.简单的前端限制    （原理
@@ -1126,7 +1126,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1673252821264"></script>
+<script src="/js/app.js?v=1673253201051"></script>
 
 <script src="https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -1145,10 +1145,6 @@
 <!-- hexo injector body_end start -->
 <script src="/js/clock.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-
-<script src="/js/search.js"></script>
-
 <script src="https://lib.baomitu.com/clipboard.js/2.0.8/clipboard.min.js"></script>
 
 <script src="/lib/codeBlock/codeBlockFuction.js"></script>
@@ -1160,6 +1156,10 @@
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script src="/js/search.js"></script>
 
 <script src="/js/webapp.js"></script>
 <!-- hexo injector body_end end --></body>
