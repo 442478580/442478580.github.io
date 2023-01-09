@@ -31,7 +31,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1673253201054">
+  <link rel="stylesheet" href="/css/style.css?v=1673267286290">
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -232,7 +232,7 @@
         
         <div class="nexmoe-post-meta nexmoe-rainbow">
             <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月09日</a>
-            <a><i class="nexmoefont icon-areachart"></i>500 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>509 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
         </div>
         
@@ -243,7 +243,10 @@
 <p>web155.与上题方法相同</p>
 <p>web156.在前几题的基础上图片文件内容还过滤了[],可以用{}来代替继续写一句话木马<br>    还可以选择在上传图片文件里不写入一句话木马，而写入其他代码以直接输出获取flag的目的，比如写入：<?= system('tac ../f*')?> </p>
 <p>web157与158<br>.对比上题图片文件内容;和反引号也不能用了,过滤;可以用闭合php标签用?&gt;来绕过  如：<?= system('tac ../f*')?></p>
-<p>web159<br>.对比上题图片文件内容还过滤了括号，可以直接用<?=`tac ../f*`?></p>
+<p>web159<br>.对比上题图片文件内容还过滤了括号，<br>总的说过滤了</p>
+<pre><code>php  &#123;&#125; [] ; ()
+</code></pre>
+<p>可以直接用<?=`tac ../f*`?></p>
 <p>总：1.这几题都用了.user.ini配置文件<br>    2.要想到文件内容也可能被过滤<br>    3.当上传的是一句话木马时，可以用post进行执行某些命令<br>    4.上传的图片内容不能仅仅局限于<br>      <?php @eval($_POST['a']);?>一句话木马，除了可以将其变形之外；还有很多可以用的其他的<br>      比如：<?=`tac ../f*`?><br>            <?= system('tac ../f*')?><br>            还有<?php phpinfo(); ?>  该代码只有一行，执行后可以显示当前站点的配置</p>
 
             
@@ -1066,7 +1069,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1673253201054"></script>
+<script src="/js/app.js?v=1673267286291"></script>
 
 <script src="https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 <script>
