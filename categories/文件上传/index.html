@@ -31,7 +31,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1673231825810">
+  <link rel="stylesheet" href="/css/style.css?v=1673244558947">
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -298,8 +298,8 @@
 <p>但是可以上传.jpg文件，可是 .jpg只有解析成 php文件才能getshell</p>
 <p>因此我们需要先上传 .htaccess 文件，然后再上传个jpg木马图片，上传好.htaccess文件后，再写一个一句话木马，后缀改为jpg，进行上传，然后连接蚁剑即可<br>】<br>注：1.注意上传过.htacess后再上传木马图片，不用把后缀改为php，jpg就行，<br>2.当用.htaccess不行时，用.user.ini试试</p>
 <p>11.Nginx  是一个高性能的HTTP和反向代理web服务器，是一款轻量级的web服务器&#x2F;反向代理服务器及电子邮件服务器，特点是占用内存小，并发能力强<br>Nginx的解析漏洞：<br>(1).由配置错误导致的漏洞：对于任意文件名，在后面加上&#x2F;任意文件名.php该文件就会以php格式进行解析<br>具体操作：上传后访问返回的url并在后面加上&#x2F;.php进行访问，然后用hackbar传 密码&#x3D;phpinfo();<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32434307/article/details/79480036">https://blog.csdn.net/qq_32434307/article/details/79480036</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/AAAAAAAAAAAA66/article/details/122253720%E3%80%90%E6%B6%89%E5%8F%8A%E9%A2%98%E7%9B%AE%E3%80%91">https://blog.csdn.net/AAAAAAAAAAAA66/article/details/122253720【涉及题目】</a><br>(2).<br>00截断<br>(3).cvE-2013-4547（文件名逻辑漏洞）：<br>        使用方法：.上传一个图片马 如名字为为1.jpg空格<br>                         .抓包改为1.jpg…php(或者url直接访问1.jpg…php再抓包)<br>           .然后修改hex，改为20 00 2e<br>         .修改后会发现图片会被当做php解析</p>
-<p>(4).  .user.ini（绕过黑名单）<br>php.ini是php的一个全局配置文件，对整个web服务起作用；而.user.ini和.htaccess一样是目录的配置文件，<br>但是user.ini.它比.htaccess用的更广，不管是nginx&#x2F;apache&#x2F;IIS，只要是以fastcgi运行的php都可以用这个方法。<br>使用条件:<br>服务器脚本语言为PHP<br>对应目录下面有可执行的php文件,如index.php<br>服务器使用CGI／FastCGI模式</p>
-<p>.user.ini就是用户自定义的一个php.ini，我们可以利用这个文件来构造后门和隐藏后门<br>     使用方式：.上传一张图片（用txt里面写上webshell等也行）<br>                          .上传.user.ini文件。内容为<br>               auto_prepend_file&#x3D;2.png&#x2F;&#x2F;文件上传前上传 或auto_append_file2.png&#x2F;&#x2F;文件上传后上传<br>【或者先上传.user.ini再上传图片马也行】<br>                                                        .最后访问index.php再用蚁剑连接即可<br>                            .访问URL&#x2F;2.png&#x2F;xxphp(目录中存在的一个文件，一般是index.php)&#x2F;&#x2F;这种形式试了但是用不了，还是用上面那一句</p>
+<p>(4).  .user.ini（绕过黑名单）<br>php.ini是php的一个全局配置文件，对整个web服务起作用；而.user.ini和.htaccess一样是目录的配置文件，<br>但是.user.ini比.htaccess用的更广，不管是nginx&#x2F;apache&#x2F;IIS，只要是以fastcgi运行的php都可以用这个方法。<br>使用条件:<br>服务器脚本语言为PHP<br>对应目录下面有可执行的php文件,如index.php<br>服务器使用CGI／FastCGI模式</p>
+<p>.user.ini就是用户自定义的一个php.ini，我们可以利用这个文件来构造后门和隐藏后门<br>     使用方式：.上传一张图片（用txt里面写上webshell等也行）<br>                          .上传.user.ini文件。内容为<br>               auto_prepend_file&#x3D;2.png&#x2F;&#x2F;文件上传前上传 或auto_append_file2.png&#x2F;&#x2F;文件上传后上传<br>【或者先上传.user.ini再上传图片马也行】<br>                                                        .最后访问相应的php文件即可再用蚁剑连接即可<br>                            .访问URL&#x2F;2.png&#x2F;xxphp(目录中存在的一个文件，一般是index.php)</p>
 <p>注意：在这里进行上传木马图片时，不用再改后缀为php了<br>12.IIS是什么？<br>IIS是缩写，全称Internet Information Services ( IIS,互联网信息服务 ),是由微软公司提供的基于运行Microsoft Windows的互联网基本服务</p>
 <p>iss漏洞<br>iss5.x至iss6.x存在的解析漏洞<br>   (1).1.  目录解析</p>
 <p><a target="_blank" rel="noopener" href="http://www.xxx.com/xx.asp/xx/jpg">www.xxx.com/xx.asp/xx/jpg</a><br>以*.asp命名的文件夹里的文件都将会被当成ASP文件执行。<br>  (2). 文件解析<br>*.asp;.jpg 像这种畸形文件名在“；”后面的直接被忽略，也就是说当成 *.asp文件执行。<br><a target="_blank" rel="noopener" href="http://www.xxx.com/xx.asp;.jpg">www.xxx.com/xx.asp;.jpg</a></p>
@@ -1029,7 +1029,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1673231825810"></script>
+<script src="/js/app.js?v=1673244558947"></script>
 
 <script src="https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 <script>
@@ -1048,6 +1048,8 @@
 <!-- hexo injector body_end start -->
 <script src="/js/clock.js"></script>
 
+<script src="/js/webapp.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
 <script src="/js/search.js"></script>
@@ -1063,8 +1065,6 @@
 <script src="/lib/codeBlock/codeShrink.js"></script>
 
 <link rel="stylesheet" href="/lib/codeBlock/matery.css">
-
-<script src="/js/webapp.js"></script>
 <!-- hexo injector body_end end --></body>
 </html>
 
