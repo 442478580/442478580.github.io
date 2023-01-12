@@ -31,7 +31,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1673353005534">
+  <link rel="stylesheet" href="/css/style.css?v=1673500945221">
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -56,7 +56,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div class="nexmoe-count-item"><span>Articles</span>4 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
+        <div class="nexmoe-count-item"><span>Articles</span>5 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>Tags</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
         <div class="nexmoe-count-item"><span>Categories</span>3<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
@@ -182,7 +182,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">Archive</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -219,6 +219,36 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts">
+    
+    <div class="nexmoe-post">
+        <a href="/2023/01/12/%E4%B8%83%E5%8D%81%E5%85%AB%E5%88%B0%E5%85%AB%E5%8D%81%E4%B8%80/">
+            
+                <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="七十八到八十一" class="lazyload">
+                    <h1>七十八到八十一</h1>
+                </div>
+            
+        </a>
+        
+        <div class="nexmoe-post-meta nexmoe-rainbow">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月12日</a>
+            <a><i class="nexmoefont icon-areachart"></i>312 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+        </div>
+        
+        <article>
+            
+                <p>web78:直接用php:&#x2F;&#x2F;filter伪协议包含得到flag</p>
+<p>web79：</p>
+<p>if(isset($_GET[‘file’])){<br>    $file &#x3D; $_GET[‘file’];<br>    $file &#x3D; str_replace(“php”, “???”, $file);<br>    include($file);<br>}else{<br>    highlight_file(<strong>FILE</strong>);<br>}</p>
+<p>多了一个$file &#x3D; str_replace(“php”, “???”, $file);&#x2F;&#x2F;其意思为将$file中的php字符替换为???，关于str_replace看链接<a target="_blank" rel="noopener" href="https://www.runoob.com/php/func-string-str-replace.html">https://www.runoob.com/php/func-string-str-replace.html</a><br>可以使用date协议进行执行打开flag.php文件命令<br>payload：?file&#x3D;data:&#x2F;&#x2F;text&#x2F;plain;base64,PD9waHAgc3lzdGVtKCdjYXQgZmxhZy5waHAnKTs&#x3D;</p>
+<p>(PD9waHAgc3lzdGVtKCdjYXQgZmxhZy5waHAnKTs&#x3D;   为 &lt;?php system(‘cat flag.php’);</p>
+<p>web80：相比于上一题又多了$file &#x3D; str_replace(“data”, “???”, $file);<br>这样就把data也替换掉了，使得date协议也无法使用了，<br>可以利用包含日志的方法<br>存放日志文件地方和文件名不同<br>apache一般是&#x2F;var&#x2F;log&#x2F;apache&#x2F;access.log<br>nginx的log在&#x2F;var&#x2F;log&#x2F;nginx&#x2F;access.log和&#x2F;var&#x2F;log&#x2F;nginx&#x2F;error.log<br>该题日志文件存放处为&#x2F;var&#x2F;log&#x2F;nginx&#x2F;access.log，利用?file&#x3D;&#x2F;var&#x2F;log&#x2F;nginx&#x2F;access.log进行包含<br>可以利用bp抓包，然后将UA头改为想执行的php代码，然后在包含日志文件，达到执行php代码的目的，比如打开利用其ls，找到存放flag的文件名，而后再cat打开flag文件找到flag</p>
+<p>“web81”与上题一样</p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2023/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%85%B3%E4%BA%8E%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E9%A2%98/">
@@ -1129,7 +1159,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1673353005535"></script>
+<script src="/js/app.js?v=1673500945222"></script>
 
 <script src="https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 <script>
