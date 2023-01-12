@@ -5,7 +5,7 @@
 <head>
   
   <meta name="baidu-site-verification" content="code-J1Qg17G6wT" />
-  <title>Categories：ctfshow - future</title>
+  <title>Categories：文件包含 web78—81 - future</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
@@ -18,7 +18,7 @@
   <link rel="shortcut icon" href="/images/head/head.jpg" type="image/png" />
   <meta property="og:type" content="website">
 <meta property="og:title" content="future">
-<meta property="og:url" content="http://example.com/categories/ctfshow/index.html">
+<meta property="og:url" content="http://example.com/categories/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB-web78%E2%80%9481/index.html">
 <meta property="og:site_name" content="future">
 <meta property="og:locale">
 <meta property="article:author" content="John Doe">
@@ -31,7 +31,7 @@
   
     <link rel="stylesheet" href="//at.alicdn.com/t/font_2421060_8z08qcz5sq3.css">
   
-  <link rel="stylesheet" href="/css/style.css?v=1673501014097">
+  <link rel="stylesheet" href="/css/style.css?v=1673501371309">
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -58,7 +58,7 @@
     <div class="nexmoe-count">
         <div class="nexmoe-count-item"><span>Articles</span>5 <div class="item-radius"></div><div class="item-radius item-right"></div> </div>
         <div class="nexmoe-count-item"><span>Tags</span>0<div class="item-radius"></div><div class="item-radius item-right"></div></div>
-        <div class="nexmoe-count-item"><span>Categories</span>3<div class="item-radius"></div><div class="item-radius item-right"></div></div>
+        <div class="nexmoe-count-item"><span>Categories</span>4<div class="item-radius"></div><div class="item-radius item-right"></div></div>
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
@@ -150,7 +150,7 @@
         
 
         <li class="category-list-item">
-          <a class="category-list-link" href="/categories/ctfshow/">ctfshow</a>
+          <a class="category-list-link" href="/categories/web153—159/">web153—159</a>
           <span class="category-list-count">1</span>
         </li>
 
@@ -165,6 +165,13 @@
 
         <li class="category-list-item">
           <a class="category-list-link" href="/categories/文件上传/">文件上传</a>
+          <span class="category-list-count">1</span>
+        </li>
+
+        
+
+        <li class="category-list-item">
+          <a class="category-list-link" href="/categories/文件包含-web78—81/">文件包含 web78—81</a>
           <span class="category-list-count">1</span>
         </li>
 
@@ -221,33 +228,30 @@
         <section class="nexmoe-posts">
     
     <div class="nexmoe-post">
-        <a href="/2023/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%85%B3%E4%BA%8E%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E9%A2%98/">
+        <a href="/2023/01/12/%E4%B8%83%E5%8D%81%E5%85%AB%E5%88%B0%E5%85%AB%E5%8D%81%E4%B8%80/">
             
                 <div class="nexmoe-post-cover mdui-ripple" style="padding-bottom: 24.305555555555554%;">
-                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="文件上传关于配置文件的题" class="lazyload">
-                    <h1>文件上传关于配置文件的题</h1>
+                    <img data-src="/images/background/xiaomai.jpg" data-sizes="auto" alt="七十八到八十一" class="lazyload">
+                    <h1>七十八到八十一</h1>
                 </div>
             
         </a>
         
         <div class="nexmoe-post-meta nexmoe-rainbow">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月09日</a>
-            <a><i class="nexmoefont icon-areachart"></i>505 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+            <a><i class="nexmoefont icon-calendar-fill"></i>2023年01月12日</a>
+            <a><i class="nexmoefont icon-areachart"></i>312 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
         </div>
         
         <article>
             
-                <p>web 153:<br>考察知识点：.user.ini文件<br>1.尝试发现只能上传png格式<br>2.先写一个.user.ini文件，内容为： auto_prepend_file &#x3D;6.png<br>  .然后将其后缀改为png上传并且用burpsuite抓包后名字改为.user.ini后Go<br>  .创建一个txt文件，写入一句话木马或者，文件名改为6.png，抓包上传。发现上传成功，<br>  .最后访问upload&#x2F;index.php，用蚁剑连接找到flag（注：像这种传了一句话木马的，可以通过post传  密码&#x3D;phpinfo();看phpinfo是否成功执行来检查是否上传成功）</p>
-<p>web154.<br>.按照上一题的方法做发现一句话木马图片文件上传不了<br>.猜测一句话木马文件内容中关键字被过滤，猜测文件中php被过滤<br>.利用短标签（用&#x3D;代替php）或者大小写来绕过（phP）<br>.文件内容改过后仍按上一题步骤操作，找到flag</p>
-<p>web155.与上题方法相同</p>
-<p>web156.在前几题的基础上图片文件内容还过滤了[],可以用{}来代替继续写一句话木马<br>    还可以选择在上传图片文件里不写入一句话木马，而写入其他代码以直接输出获取flag的目的，比如写入：【<?= system('tac ../f*')?>】 </p>
-<p>web157与158<br>.对比上题图片文件内容;和反引号也不能用了,过滤;可以用闭合php标签用?&gt;来绕过  如：【<?= system('tac ../f*')?>】</p>
-<p>web159<br>.对比上题图片文件内容还过滤了括号，<br>总的说过滤了</p>
-<pre><code>php  &#123;&#125; [] ; ()
-</code></pre>
-<p>可以直接用【<?=`tac ../f*`?>】</p>
-<p>总：1.这几题都用了.user.ini配置文件<br>    2.要想到文件内容也可能被过滤<br>    3.当上传的是一句话木马时，可以用post进行执行某些命令<br>    4.上传的图片内容不能仅仅局限于<br>      <?php @eval($_POST['a']);?>一句话木马<br>      比如：【<?=`tac ../f*`?>】<br>            【<?= system('tac ../f*')?>】以倒序输出(tac)flag文件内容等执行的命令<br>            还有<?php phpinfo(); ?>  该代码只有一行，执行后可以显示当前站点的配置</p>
+                <p>web78:直接用php:&#x2F;&#x2F;filter伪协议包含得到flag</p>
+<p>web79：</p>
+<p>if(isset($_GET[‘file’])){<br>    $file &#x3D; $_GET[‘file’];<br>    $file &#x3D; str_replace(“php”, “???”, $file);<br>    include($file);<br>}else{<br>    highlight_file(<strong>FILE</strong>);<br>}</p>
+<p>多了一个$file &#x3D; str_replace(“php”, “???”, $file);&#x2F;&#x2F;其意思为将$file中的php字符替换为???，关于str_replace看链接<a target="_blank" rel="noopener" href="https://www.runoob.com/php/func-string-str-replace.html">https://www.runoob.com/php/func-string-str-replace.html</a><br>可以使用date协议进行执行打开flag.php文件命令<br>payload：?file&#x3D;data:&#x2F;&#x2F;text&#x2F;plain;base64,PD9waHAgc3lzdGVtKCdjYXQgZmxhZy5waHAnKTs&#x3D;</p>
+<p>(PD9waHAgc3lzdGVtKCdjYXQgZmxhZy5waHAnKTs&#x3D;   为 &lt;?php system(‘cat flag.php’);</p>
+<p>web80：相比于上一题又多了$file &#x3D; str_replace(“data”, “???”, $file);<br>这样就把data也替换掉了，使得date协议也无法使用了，<br>可以利用包含日志的方法<br>存放日志文件地方和文件名不同<br>apache一般是&#x2F;var&#x2F;log&#x2F;apache&#x2F;access.log<br>nginx的log在&#x2F;var&#x2F;log&#x2F;nginx&#x2F;access.log和&#x2F;var&#x2F;log&#x2F;nginx&#x2F;error.log<br>该题日志文件存放处为&#x2F;var&#x2F;log&#x2F;nginx&#x2F;access.log，利用?file&#x3D;&#x2F;var&#x2F;log&#x2F;nginx&#x2F;access.log进行包含<br>可以利用bp抓包，然后将UA头改为想执行的php代码，然后在包含日志文件，达到执行php代码的目的，比如打开利用其ls，找到存放flag的文件名，而后再cat打开flag文件找到flag</p>
+<p>“web81”与上题一样</p>
 
             
         </article>
@@ -968,7 +972,7 @@
 <script src="/lib/fancybox/js/jquery.fancybox.min.js"></script>
 
 
-<script src="/js/app.js?v=1673501014097"></script>
+<script src="/js/app.js?v=1673501371309"></script>
 
 <script src="https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js"></script>
 <script>
